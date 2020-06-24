@@ -1,27 +1,28 @@
-import React, {useState, useEffect} from 'react';
-import Task from '../components/Task';
+import React, { useState, useEffect, useContext } from 'react'
+import Task from '../components/Task'
+import { DarkMode } from '../App'
 
 function Tasks() {
-  const [todos, setTodo] = useState([]);
-
+  const [todos, setTodo] = useState([])
+  const { darkMode } = useContext(DarkMode)
+  
   const addTodo = event => {
     if (event.key === 'Enter') {
       setTodo([
         ...todos,
         {
           id: Date.now(),
-          task: event.target.value,
-          completed: false
+          task: event.target.value
         }
       ])
-      document.getElementById('input').value = '';
+      document.getElementById('input').value = ''
     }
   }
 
   const saveTodo = (id, newTask) => {
     setTodo(todos.map(todo => {
       if (todo.id === id) {
-        todo.task = newTask;
+        todo.task = newTask
         return todo
       }
       return todo
@@ -29,22 +30,22 @@ function Tasks() {
   }
 
   const removeTask = event => {
-    const taskId = Number(event.target.getAttribute('data-id'));
+    const taskId = Number(event.target.getAttribute('data-id'))
     setTodo(todos.filter(todo => todo.id !== taskId))
   } 
 
   useEffect(() => {
-    const localStorageTodos = localStorage.getItem('todos');
-    setTodo(JSON.parse(localStorageTodos));
-    document.getElementById('input').setAttribute('focused', true);
-  }, [])
+    const localStorageTodos = localStorage.getItem('todos')
+    setTodo(JSON.parse(localStorageTodos))
+    document.getElementById('input').setAttribute('focused', true)
+}, [])
 
   useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
+    localStorage.setItem('todos', JSON.stringify(todos))
   }, [todos])
 
   return (
-    <div className="tasks">
+    <div className={`tasks ${darkMode && 'tasks-dark'}`}>
         <div className="input-wrap">
             <input 
                 type="text" 
@@ -55,14 +56,14 @@ function Tasks() {
             </input>
         </div>
         <div className="tasks-wrap">
-        {
+        {   
             todos.map(todo => (
-            <Task key={todo.id} todo={todo} removeTask={removeTask} saveTodo={saveTodo} />
+                <Task key={todo.id} todo={todo} removeTask={removeTask} saveTodo={saveTodo} />
             ))
         }
         </div>
     </div>
-  );
+  )
 }
 
-export default Tasks;
+export default Tasks

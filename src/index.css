@@ -1,16 +1,33 @@
 @import "~materialize-css/dist/css/materialize.min.css";
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-.content-wrapper {
-    padding-top: 30px;
-}
+#body { background: #fafafa; }
+
+.content-wrapper { padding-top: 30px; }
 
 .App-Title {
     font-family: Fredoka One;
+    font-size: 40px !important;
 }
 
-.nav-wrapper {
-    padding: 15px 20px;
-}
-
+.nav-wrapper { padding: 23px 20px; }
 .input-wrap { padding-bottom: 20px; }
+.nav-content { padding: 20px 0 5px 0; }
+
+.about-main { font-size: 16px; }
+.about-ul { opacity: .5; }
+
+.done {
+    color: #81c784 !important;
+    font-weight: bold;
+}
+
+.edit { color: #ee6e73 !important; }
+
+
+/* Dark Theme */
+
+
+.body-dark { background: #37474f !important; }
+.tasks-dark input { color: #fafafa; }
+.about-dark { color: #fafafa; }
