@@ -5,7 +5,7 @@ import { DarkMode } from '../App'
 function Tasks() {
   const [todos, setTodo] = useState([])
   const { darkMode } = useContext(DarkMode)
-  
+
   const addTodo = event => {
     if (event.key === 'Enter') {
       setTodo([
@@ -56,7 +56,7 @@ function Tasks() {
             </input>
         </div>
         <div className="tasks-wrap">
-        {   
+        { 
             todos.map(todo => (
                 <Task key={todo.id} todo={todo} removeTask={removeTask} saveTodo={saveTodo} />
             ))
