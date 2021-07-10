@@ -1,33 +1,53 @@
 @import "~materialize-css/dist/css/materialize.min.css";
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
 
-#body { background: #fafafa; }
+#body {
+  background: #fafafa;
+}
 
-.content-wrapper { padding-top: 30px; }
+.content-wrapper {
+  padding-top: 30px;
+}
 
 .App-Title {
-    font-family: Fredoka One;
-    font-size: 35px !important;
+  font-family: Fredoka One;
+  font-size: 35px !important;
 }
 
-.nav-wrapper { padding: 23px 20px; }
-.input-wrap { padding-bottom: 20px; }
-.nav-content { padding: 20px 0 5px 0; }
+.nav-wrapper {
+  padding: 23px 20px;
+}
+.input-wrap {
+  padding-bottom: 20px;
+}
+.nav-content {
+  padding: 20px 0 5px 0;
+}
 
-.about-main { font-size: 16px; }
-.about-ul { opacity: .5; }
+.about-main {
+  font-size: 16px;
+}
+.about-ul {
+  opacity: 0.5;
+}
 
 .done {
-    color: #81c784 !important;
-    font-weight: bold;
+  color: #81c784 !important;
+  font-weight: bold;
 }
 
-.edit { color: #ee6e73 !important; }
-
+.edit {
+  color: #ee6e73 !important;
+}
 
 /* Dark Theme */
 
-
-.body-dark { background: #37474f !important; }
-.tasks-dark input { color: #fafafa; }
-.about-dark { color: #fafafa; }
+.body-dark {
+  background: #37474f !important;
+}
+.tasks-dark input {
+  color: #fafafa;
+}
+.about-dark {
+  color: #fafafa;
+}
